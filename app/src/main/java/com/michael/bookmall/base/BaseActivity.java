@@ -27,9 +27,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.michael.bookmall.R;
 import com.michael.bookmall.component.AppComponent;
 import com.michael.bookmall.utils.StatusBarCompat;
+import com.michael.bookmall.utils.Util;
 import com.michael.bookmall.view.loadding.CustomDialog;
 
 import butterknife.ButterKnife;
@@ -48,30 +50,34 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        mContext = this;
         if (statusBarColor == 0) {
             statusBarView = StatusBarCompat.compat(this, ContextCompat.getColor(this, R.color.colorPrimaryDark));
         } else if (statusBarColor != -1) {
             statusBarView = StatusBarCompat.compat(this, statusBarColor);
         }
         transparent19and20();
-        mContext = this;
         ButterKnife.bind(this);
 //        setupActivityComponent(ReaderApplication.getsInstance().getAppComponent());
-//        mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
+        mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
         if (mCommonToolbar != null) {
             initToolBar();
             setSupportActionBar(mCommonToolbar);
         }
-        initDatas();
-        configViews();
+        initView();
+        initData();
 //        mNowMode = SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT);
     }
 
     protected void transparent19and20() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
                 && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            LogUtils.e("Build.VERSION.SDK_INT : " + Build.VERSION.SDK_INT);
             //透明状态栏
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);   // 状态栏
+            if (!Util.hasNavBar(mContext)) {
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);   // 导航栏
+            }
         }
     }
 
@@ -108,12 +114,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initToolBar();
 
-    public abstract void initDatas();
+    public abstract void initData();
 
     /**
      * 对各种控件进行设置、适配、填充数据
      */
-    public abstract void configViews();
+    public abstract void initView();
 
     protected void gone(final View... views) {
         if (views != null && views.length > 0) {

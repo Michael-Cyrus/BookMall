@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.michael.bookmall.ui.MainActivity">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.michael.bookmall.ui.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/common_toolbar" />
 
-</android.support.constraint.ConstraintLayout>
+    <!--smartTabLayout参数详解:
+    http://blog.csdn.net/nsongbai/article/details/70945406 -->
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/viewpagertab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:background="@color/colorPrimary"
+        app:stl_defaultTabTextColor="@color/custom_tab"
+        app:stl_defaultTabTextSize="@dimen/sp_16"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerColor="@color/transparent"
+        app:stl_dividerThickness="0dp"
+        app:stl_indicatorColor="@color/orange"
+        app:stl_indicatorInterpolation="linear"
+        app:stl_indicatorThickness="3dp"
+        app:stl_underlineColor="@color/light_blue"
+        app:stl_underlineThickness="1dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
