@@ -22,20 +22,13 @@
     android:layout_height="match_parent"
     android:background="@color/common_bg">
 
-    <!--<com.justwayward.reader.view.recyclerview.EasyRecyclerView
+    <com.michael.bookmall.view.recyclerview.EasyRecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_empty="@layout/bookshelf_empty_view"
         app:layout_progress="@layout/common_progress_view"
-        app:scrollbarStyle="insideOverlay"/>-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="15dp"
-        android:text="推荐"
-        android:textColor="@color/common_h1"/>
+        app:scrollbarStyle="insideOverlay"/>
 
     <LinearLayout
         android:id="@+id/llBatchManagement"

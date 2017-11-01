@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="tip">#88303F9F</color>
     <color name="colorPrimary">#99CC66</color>
     <color name="colorPrimaryDark">#669933</color>
     <color name="colorAccent">#FF4081</color>
