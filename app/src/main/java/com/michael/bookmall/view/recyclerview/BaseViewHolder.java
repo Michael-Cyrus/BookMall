@@ -35,8 +35,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.michael.bookmall.view.glide.GlideCircleTransform;
-import com.michael.bookmall.view.glide.GlideRoundTransform;
+import com.yuyh.easyadapter.glide.GlideCircleTransform;
+import com.yuyh.easyadapter.glide.GlideRoundTransform;
 
 
 /**

@@ -49,6 +49,10 @@ public abstract class BaseFragment extends Fragment {
         this.activity = (FragmentActivity) activity;
     }
 
+    public FragmentActivity getSupportActivity() {
+        return super.getActivity();
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();

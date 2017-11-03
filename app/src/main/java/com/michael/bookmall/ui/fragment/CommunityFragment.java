@@ -1,13 +1,32 @@
 package com.michael.bookmall.ui.fragment;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 import com.michael.bookmall.R;
 import com.michael.bookmall.base.BaseFragment;
+import com.michael.bookmall.bean.FindBean;
+import com.michael.bookmall.common.OnRvItemClickListener;
+import com.michael.bookmall.ui.adapter.FindAdapter;
+import com.michael.bookmall.view.SupportDividerItemDecoration;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.Bind;
 
 /** 社区
  * Created by chenyao on 2017/10/31.
  */
 
-public class CommunityFragment extends BaseFragment {
+public class CommunityFragment extends BaseFragment implements OnRvItemClickListener<FindBean> {
+
+    @Bind(R.id.recyclerview)
+    RecyclerView mRecyclerView;
+
+    private FindAdapter mAdapter;
+    private List<FindBean> mList = new ArrayList<>();
 
     @Override
     public int getLayoutResId() {
@@ -15,17 +34,33 @@ public class CommunityFragment extends BaseFragment {
     }
 
     @Override
-    protected void attachView() {
+    public void initData() {
+        mList.clear();
+        mList.add(new FindBean("综合讨论区", R.mipmap.discuss_section));
+        mList.add(new FindBean("书评区", R.mipmap.comment_section));
+        mList.add(new FindBean("书荒互助区", R.mipmap.helper_section));
+        mList.add(new FindBean("女生区", R.mipmap.girl_section));
+        mList.add(new FindBean("原创区",R.mipmap.yuanchuang));
+    }
+
+    @Override
+    public void configView() {
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.addItemDecoration(new SupportDividerItemDecoration(mContext, LinearLayoutManager.VERTICAL, true));
+
+        mAdapter = new FindAdapter(mContext, mList, this);
+        mRecyclerView.setAdapter(mAdapter);
 
     }
 
     @Override
-    protected void initData() {
+    public void attachView() {
 
     }
 
     @Override
-    protected void configView() {
+    public void onItemClick(View view, int position, FindBean data) {
 
     }
 }

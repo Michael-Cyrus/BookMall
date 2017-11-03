@@ -1,4 +1,4 @@
-package com.michael.bookmall.view.glide;
+package com.yuyh.easyadapter.glide;
 
 import android.content.Context;
 import android.graphics.Bitmap;
