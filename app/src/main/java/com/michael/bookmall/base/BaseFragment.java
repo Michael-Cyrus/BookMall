@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.michael.bookmall.BookApplication;
+import com.michael.bookmall.component.AppComponent;
+
 import butterknife.ButterKnife;
 
 /**
@@ -37,11 +40,13 @@ public abstract class BaseFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-//        setupActivityComponent(ReaderApplication.getsInstance().getAppComponent());
+        setupActivityComponent(BookApplication.getsInstance().getAppComponent());
         attachView();
         initData();
         configView();
     }
+
+    protected abstract void setupActivityComponent(AppComponent appComponent);
 
     @Override
     public void onAttach(Activity activity) {

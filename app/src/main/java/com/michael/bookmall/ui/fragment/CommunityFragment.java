@@ -8,6 +8,8 @@ import com.michael.bookmall.R;
 import com.michael.bookmall.base.BaseFragment;
 import com.michael.bookmall.bean.FindBean;
 import com.michael.bookmall.common.OnRvItemClickListener;
+import com.michael.bookmall.component.AppComponent;
+import com.michael.bookmall.ui.activity.BookDiscussionActivity;
 import com.michael.bookmall.ui.adapter.FindAdapter;
 import com.michael.bookmall.view.SupportDividerItemDecoration;
 
@@ -27,6 +29,11 @@ public class CommunityFragment extends BaseFragment implements OnRvItemClickList
 
     private FindAdapter mAdapter;
     private List<FindBean> mList = new ArrayList<>();
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+
+    }
 
     @Override
     public int getLayoutResId() {
@@ -61,6 +68,10 @@ public class CommunityFragment extends BaseFragment implements OnRvItemClickList
 
     @Override
     public void onItemClick(View view, int position, FindBean data) {
-
+        switch (position){
+            case 0:
+                BookDiscussionActivity.startActivity(activity, true);
+                break;
+        }
     }
 }

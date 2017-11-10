@@ -64,8 +64,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             initToolBar();
             setSupportActionBar(mCommonToolbar);
         }
-        initView();
         initData();
+        initView();
 //        mNowMode = SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT);
     }
 

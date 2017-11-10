@@ -13,25 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.michael.bookmall.component;
+package com.michael.bookmall.ui.contract;
 
-import android.content.Context;
 
-import com.michael.bookmall.api.BookApi;
-import com.michael.bookmall.module.AppModule;
-import com.michael.bookmall.module.BookApiModule;
+import com.michael.bookmall.base.BaseContract;
+import com.michael.bookmall.bean.DiscussionList;
 
-import dagger.Component;
+import java.util.List;
 
 /**
  * @author yuyh.
- * @date 2016/8/3.
+ * @date 16/9/2.
  */
-@Component(modules = {AppModule.class, BookApiModule.class})
-public interface AppComponent {
+public interface BookDiscussionContract {
 
-    Context getContext();
+    interface View extends BaseContract.BaseView {
+        void showBookDisscussionList(List<DiscussionList.PostsBean> list, boolean isRefresh);
+    }
 
-    BookApi getReaderApi();
+    interface Presenter extends BaseContract.BasePresenter<View> {
+        void getBookDisscussionList(String block, String sort, String distillate, int start, int limit);
+    }
 
 }

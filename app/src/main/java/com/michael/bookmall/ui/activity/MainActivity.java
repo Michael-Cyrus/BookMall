@@ -40,6 +40,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    public void initData() {
+    }
+
+    @Override
     public void initView() {
         FragmentPagerItems pages = new FragmentPagerItems(this);
         pages.add(FragmentPagerItem.of("书架", RecommendFragment.class));
@@ -48,10 +52,6 @@ public class MainActivity extends BaseActivity {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(getSupportFragmentManager(), pages);
         viewpager.setAdapter(adapter);
         viewpagertab.setViewPager(viewpager);
-    }
-
-    @Override
-    public void initData() {
     }
 
     @Override

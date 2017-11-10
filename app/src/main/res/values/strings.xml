@@ -12,4 +12,21 @@
     <string name="menu_main_scan_local_book">扫描本地书籍</string>
     <string name="to_add">去添加</string>
 
+    <!--书籍详情相关-->
+    <string name="book_detail">书籍详情</string>
+    <string name="book_detail_author">%1$s</string>
+    <string name="book_detail_category"> &#160;|&#160;%1$s |&#160;</string>
+    <string name="book_detail_user_lv">&#160;lv.%1$d</string>
+    <string name="book_detail_remove_collection">不追了</string>
+    <string name="book_detail_join_collection">追更新</string>
+    <string name="book_detail_retention_ratio">%1$s%%</string>
+    <string name="book_detail_hot_reviews">热门书评</string>
+    <string name="book_detail_community">%1$s的社区</string>
+    <string name="book_detail_post_count">共有%1$d个帖子</string>
+    <string name="book_detail_recommend_book_list">推荐书单</string>
+    <string name="book_detail_recommend_book_list_book_count">共%1$d本书 |&#160;</string>
+    <string name="book_detail_recommend_book_list_collector_count">%1$d人收藏</string>
+    <string name="book_detail_is_joined_the_book_shelf">是否将《%1$s》加入书架</string>
+    <string name="book_detail_has_joined_the_book_shelf">《%1$s》成功加入书架</string>
+    <string name="book_detail_has_remove_the_book_shelf">已移除《%1$s》</string>
 </resources>

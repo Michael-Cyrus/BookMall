@@ -4,6 +4,7 @@ import com.michael.bookmall.R;
 import com.michael.bookmall.base.BaseRVFragment;
 import com.michael.bookmall.bean.BookMixAToc;
 import com.michael.bookmall.bean.Recommend;
+import com.michael.bookmall.component.AppComponent;
 import com.michael.bookmall.ui.contract.RecommendContract;
 import com.michael.bookmall.ui.presenter.RecommendPresenter;
 import com.michael.bookmall.view.recyclerview.RecyclerArrayAdapter;
@@ -16,6 +17,11 @@ import java.util.List;
 
 public class RecommendFragment extends BaseRVFragment<RecommendPresenter, Recommend.RecommendBooks>
         implements RecommendContract.View, RecyclerArrayAdapter.OnItemLongClickListener {
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+
+    }
 
     @Override
     public int getLayoutResId() {

@@ -13,25 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.michael.bookmall.component;
+package com.michael.bookmall.event;
 
-import android.content.Context;
 
-import com.michael.bookmall.api.BookApi;
-import com.michael.bookmall.module.AppModule;
-import com.michael.bookmall.module.BookApiModule;
-
-import dagger.Component;
+import com.michael.bookmall.base.Constant;
 
 /**
  * @author yuyh.
- * @date 2016/8/3.
+ * @date 16/9/2.
  */
-@Component(modules = {AppModule.class, BookApiModule.class})
-public interface AppComponent {
+public class SelectionEvent {
 
-    Context getContext();
+    public String distillate;
 
-    BookApi getReaderApi();
+    public String type;
 
+    public String sort;
+
+    public SelectionEvent(@Constant.Distillate String distillate,
+                          @Constant.BookType String type,
+                          @Constant.SortType String sort) {
+        this.distillate = distillate;
+        this.type = type;
+        this.sort = sort;
+    }
+
+    public SelectionEvent(@Constant.SortType String sort) {
+        this.sort = sort;
+    }
 }
