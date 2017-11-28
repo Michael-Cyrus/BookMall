@@ -1,10 +1,10 @@
 package com.michael.bookmall.ui.presenter;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.michael.bookmall.api.BookApi;
 import com.michael.bookmall.base.RxPresenter;
 import com.michael.bookmall.bean.DiscussionList;
 import com.michael.bookmall.ui.contract.BookDiscussionContract;
+import com.michael.bookmall.utils.LogUtils;
 import com.michael.bookmall.utils.RxUtil;
 import com.michael.bookmall.utils.StringUtils;
 

@@ -2,7 +2,6 @@ package com.michael.bookmall.ui.fragment;
 
 import android.os.Bundle;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.michael.bookmall.R;
 import com.michael.bookmall.base.BaseRVFragment;
 import com.michael.bookmall.base.Constant;
@@ -13,6 +12,7 @@ import com.michael.bookmall.event.SelectionEvent;
 import com.michael.bookmall.ui.contract.BookDiscussionContract;
 import com.michael.bookmall.ui.easyadapter.BookDiscussionAdapter;
 import com.michael.bookmall.ui.presenter.BookDiscussionPresenter;
+import com.michael.bookmall.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -68,7 +68,6 @@ public class BookDiscussionFragment extends BaseRVFragment<BookDiscussionPresent
 
     @Override
     public void onRefresh() {
-        super.onRefresh();
         mPresenter.getBookDisscussionList(block, sort, distillate, 0, limit);
     }
 
@@ -76,7 +75,7 @@ public class BookDiscussionFragment extends BaseRVFragment<BookDiscussionPresent
     public void onItemClick(int position) {
         DiscussionList.PostsBean data = mAdapter.getItem(position);
 //        BookDiscussionDetailActivity.startActivity(activity, data._id);
-        ToastUtils.showShort("跳转到 BookDiscussionDetailActivity");
+        ToastUtils.showToast("跳转到 BookDiscussionDetailActivity");
     }
 
     @Override
