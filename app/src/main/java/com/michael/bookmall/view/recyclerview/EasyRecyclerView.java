@@ -31,8 +31,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.NetworkUtils;
 import com.michael.bookmall.R;
+import com.michael.bookmall.utils.NetworkUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -324,7 +324,7 @@ public class EasyRecyclerView extends FrameLayout {
             } else {
                 count = recyclerView.getAdapter().getItemCount();
             }
-            if (count == 0 && !NetworkUtils.isConnected()) {
+            if (count == 0 && !NetworkUtils.isAvailable(recyclerView.getContext())) {
                 recyclerView.showError();
                 return;
             }

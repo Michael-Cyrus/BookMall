@@ -72,6 +72,9 @@ public class CommunityFragment extends BaseFragment implements OnRvItemClickList
             case 0:
                 BookDiscussionActivity.startActivity(activity, true);
                 break;
+            case 1:
+                BookDiscussionActivity.startActivity(activity, true);
+                break;
         }
     }
 }

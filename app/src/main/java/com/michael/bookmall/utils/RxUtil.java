@@ -17,7 +17,6 @@ package com.michael.bookmall.utils;
 
 import android.text.TextUtils;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.google.gson.Gson;
 import com.michael.bookmall.BookApplication;
 

@@ -27,9 +27,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.michael.bookmall.R;
 import com.michael.bookmall.component.AppComponent;
+import com.michael.bookmall.utils.LogUtils;
 import com.michael.bookmall.utils.StatusBarCompat;
 import com.michael.bookmall.utils.Util;
 import com.michael.bookmall.view.loadding.CustomDialog;

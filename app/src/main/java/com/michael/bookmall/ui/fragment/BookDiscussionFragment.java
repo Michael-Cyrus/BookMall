@@ -72,6 +72,11 @@ public class BookDiscussionFragment extends BaseRVFragment<BookDiscussionPresent
     }
 
     @Override
+    public void onLoadMore() {
+        mPresenter.getBookDisscussionList(block, sort, distillate, start, limit);
+    }
+
+    @Override
     public void onItemClick(int position) {
         DiscussionList.PostsBean data = mAdapter.getItem(position);
 //        BookDiscussionDetailActivity.startActivity(activity, data._id);
@@ -90,7 +95,12 @@ public class BookDiscussionFragment extends BaseRVFragment<BookDiscussionPresent
 
     @Override
     public void showBookDisscussionList(List<DiscussionList.PostsBean> list, boolean isRefresh) {
-
+        if (isRefresh) {
+            mAdapter.clear();
+            start = 0;
+        }
+        mAdapter.addAll(list);
+        start = start + list.size();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

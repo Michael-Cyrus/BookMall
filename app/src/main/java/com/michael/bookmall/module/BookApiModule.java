@@ -1,8 +1,8 @@
 package com.michael.bookmall.module;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.michael.bookmall.api.BookApi;
 import com.michael.bookmall.api.LoggingInterceptor;
+import com.michael.bookmall.utils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
 

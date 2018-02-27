@@ -18,7 +18,6 @@ package com.michael.bookmall.utils;
 import android.content.Context;
 import android.os.Environment;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.michael.bookmall.base.Constant;
 
 import java.io.BufferedInputStream;
